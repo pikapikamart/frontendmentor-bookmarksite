@@ -503,7 +503,7 @@ summary:focus-visible {
 }
 
 .faq__section {
-    padding-top: .6875rem
+    padding-top: clamp(.6875rem, 4vw, 1.4375rem)
 }
 
 .faq__question {
@@ -558,7 +558,7 @@ summary:focus-visible {
 
 .faq__external {
     display: inline-block;
-    margin: 3rem 0 0 50%;
+    margin: clamp(3rem, 5vw, 3.375rem) 0 0 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
 }
@@ -859,7 +859,7 @@ summary:focus-visible {
     }
 
     .hero__container {
-        padding: clamp(5rem, 10vw, 7.125rem) clamp(2rem, 6.8vw, 5.75rem) 11.375rem clamp(2rem, 12.2vw, 10.25rem)
+        padding: clamp(5rem, 10vw, 7.125rem) clamp(2rem, 6.8vw, 5.75rem) 11.8125rem clamp(2rem, 12.2vw, 10.25rem)
     }
 
     .hero__wrapper {
@@ -894,7 +894,7 @@ summary:focus-visible {
 
     .features {
         margin-top: 0;
-        max-height: 57.4375rem
+        max-height: 58.0625rem
     }
 
     .features:before {
@@ -905,7 +905,7 @@ summary:focus-visible {
     }
 
     .features__container {
-        padding: 0 clamp(2rem, 12.2vw, 10.25rem) 15rem
+        padding: 0 clamp(2rem, 12.2vw, 10.25rem) 15.625rem
     }
 
     .block {
@@ -999,6 +999,10 @@ summary:focus-visible {
         flex: 0 1 50%;
         padding: clamp(0rem, 4vw, 3.75rem) 0 0 clamp(1.5rem, 8vw, 5.875rem);
         text-align: left
+    }
+
+    .extension {
+        max-height: 48.25rem
     }
 
     .extension__container {

@@ -151,7 +151,7 @@ input {
     }
 
     &__section {
-        padding-top: func.convert(11);
+        padding-top: func.resizer(11, 4vw, 23);
     }
 
     &__question {
@@ -200,7 +200,7 @@ input {
 
     &__external {
         display: inline-block;
-        margin: func.convert(48) 0 0 50%;
+        margin: func.resizer(48, 5vw, 54) 0 0 50%;
         transform: translateX(-50%);
     }
 }
@@ -489,7 +489,7 @@ input {
         }
         
         &__container {
-            padding: func.resizer(80, 10vw, 114) func.resizer(32, 6.8vw, 92) func.convert(182) func.resizer(32, 12.2vw, 164);
+            padding: func.resizer(80, 10vw, 114) func.resizer(32, 6.8vw, 92) func.convert(189) func.resizer(32, 12.2vw, 164);
         }
 
         &__wrapper {
@@ -518,7 +518,7 @@ input {
 
     .features {
         margin-top: 0;
-        max-height: func.convert(919);
+        max-height: func.convert(929);
 
         &::before {
             height: clamp(15.75rem,26vw,22rem);
@@ -528,7 +528,7 @@ input {
         }
 
         &__container {
-            padding: 0 func.resizer(32, 12.2vw, 164) func.convert(240);
+            padding: 0 func.resizer(32, 12.2vw, 164) func.convert(250);
         }
     }
 
@@ -624,6 +624,7 @@ input {
     }
 
     .extension {
+        max-height: func.convert(772);
 
         &__container {
             padding: 0 func.convert(32) func.convert(156);
