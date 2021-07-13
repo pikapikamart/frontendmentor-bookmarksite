@@ -20,7 +20,7 @@ I did not include the mobile preview since it is long
 
 ### Links
 
-- Live Site URL: [Live site of the challenge hosted here]https://pikapikamart.github.io/frontendmentor-bookmark/)
+- Live Site URL: [Live site of the challenge hosted here]https://pikapikamart.github.io/frontendmentor-bookmarksite/)
 
 ## My process
 
