@@ -1001,10 +1001,6 @@ summary:focus-visible {
         text-align: left
     }
 
-    .extension {
-        max-height: 48.25rem
-    }
-
     .extension__container {
         padding: 0 2rem 9.75rem
     }
