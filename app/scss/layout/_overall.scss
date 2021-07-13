@@ -270,7 +270,7 @@ input {
     &__blue {
         background-color: var.$s-blue;
         border-color: var.$s-blue;
-        padding: func.convert(13) func.convert(22);
+        padding: func.resizer(11, 1vw, 13) func.resizer(13, 2vw, 22);
     }
 
     &__red {
@@ -283,7 +283,7 @@ input {
         background-color: #FFFFFF;
         box-shadow: 0 .25rem 1rem 2px rgba(0, 0, 0, .1);
         color: var.$vd-blue;
-        padding: func.convert(10) func.convert(22);
+        padding: func.resizer(11, 1vw, 13) func.resizer(13, 2vw, 22);
     }
 }
 
@@ -518,6 +518,7 @@ input {
 
     .features {
         margin-top: 0;
+        max-height: func.convert(902.55);
 
         &::before {
             height: clamp(15.75rem,26vw,22rem);
@@ -602,6 +603,7 @@ input {
 
         &__contents {
             display: flex;
+
         }
 
         &__image {
