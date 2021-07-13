@@ -498,7 +498,7 @@ input {
 
         &__content {
             flex: 0 1 50%;
-            margin-top: func.resizer(24, 4.6vw, 62);
+            margin-top: func.resizer(24, 5.6vw, 68);
             padding: 0 func.resizer(0, 6.4vw, 83.2) 0 0;
             text-align: left;
         }
@@ -518,7 +518,7 @@ input {
 
     .features {
         margin-top: 0;
-        max-height: func.convert(902.55);
+        max-height: func.convert(919);
 
         &::before {
             height: clamp(15.75rem,26vw,22rem);
@@ -655,7 +655,7 @@ input {
     .faq {
 
         &__container {
-            padding: 0 0 func.convert(123) 0;
+            padding: 0 0 func.convert(149) 0;
         }
 
         &__question {
