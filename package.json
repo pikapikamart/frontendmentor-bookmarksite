@@ -1,0 +1,31 @@
+{
+  "name": "20.bookmark-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Bookmark landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikapikamart/frontendmentor-bookmark.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pikapikamart/frontendmentor-bookmark/issues"
+  },
+  "homepage": "https://github.com/pikapikamart/frontendmentor-bookmark#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "browser-sync": "^2.27.4",
+    "cssnano": "^5.0.6",
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-postcss": "^9.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

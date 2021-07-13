@@ -1,0 +1,43 @@
+@use "variables" as var;
+@use "functions" as func;
+
+%flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%z-relative {
+    position: relative;
+    z-index: 10;
+}
+
+%blue-image {
+
+    &::before {
+        content: "";
+        background-color: var.$s-blue;
+        height: func.resizer(202, 42vw, 352);
+        position: absolute;
+        width: func.resizer(300, 60vw, 512);
+        z-index: -1;
+    }
+}
+
+%red-hover {
+    transition: color .35s ease;
+
+    &:hover {
+        color: var.$s-red;
+    }
+}
+
+%text {
+    color: var.$g-blue;
+    font-size: func.resizer(15, 1.5vw, 18);
+    line-height: 1.55;
+}

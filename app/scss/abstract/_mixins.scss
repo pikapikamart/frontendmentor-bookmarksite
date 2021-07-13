@@ -1,0 +1,11 @@
+@use "variables" as var;
+@use "functions" as func;
+@use "extensions";
+
+@mixin red-hover {
+    transition: color .35s ease;
+
+    &:hover {
+        color: var.$s-red;
+    }
+}

@@ -1,0 +1,109 @@
+@use "../abstract/extensions";
+@use "../abstract/functions" as func;
+@use "../abstract/variables" as var;
+
+
+.footer {
+    background-color: var.$vd-blue;
+
+    &__container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: func.convert(40) 0 func.convert(43);
+        text-align: center;
+    }
+
+    &__links {
+        margin: func.convert(39) 0 func.convert(47);
+    }
+
+    &__link {
+
+        a {
+            color: #dfdfdf;
+            text-transform: uppercase;
+        }
+
+        &:nth-of-type(2) {
+            margin: func.convert(31) 0;
+        }
+    }
+
+    &__social {
+        margin: func.convert(47) 0 0;
+
+        a {
+            display: inline-block;
+            
+            &:first-of-type {
+                margin-right: func.convert(20);
+            }
+
+            &:last-of-type {
+                margin-left: func.convert(20);
+            }
+        }
+    }
+}
+
+@media (min-width: 50em) {
+
+    .footer {
+
+        &__container {
+            align-items: center ;
+            flex-direction: row;
+            padding: func.convert(32) func.resizer(32, 12.2vw, 164)
+        }
+
+        &__nav {
+            flex: 0 1 100%;
+        }
+
+        &__links {
+            display: flex;
+            margin: 0 0 0 func.convert(64);
+            width: 100%;
+        }
+
+        &__link {
+
+            a {
+                font-size: func.convert(13);
+                transition: color .3s ease;
+
+                &:hover {
+                    color: var.$s-red;
+                }
+            }
+
+            &:nth-of-type(2) {
+                margin: 0;
+            }
+
+            &:not(:first-of-type) {
+                margin-left: func.convert(48);
+            }
+        }
+
+        &__social {
+            margin: 0 0 0 auto;
+
+            path {
+                transition: fill .3s ease;
+            }
+
+            svg {
+
+                &:hover {
+
+                    path {
+
+                        fill: var.$s-red;
+                    }
+                }
+            }
+        }
+    }
+}

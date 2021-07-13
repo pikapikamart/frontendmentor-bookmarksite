@@ -1,0 +1,255 @@
+@use "../abstract/extensions";
+@use "../abstract/functions" as func;
+@use "../abstract/variables" as var;
+@use "../abstract/mixins" as mix;
+
+.header {
+    @extend %flex-between;
+    padding: func.resizer(40, 6vw, 56) func.resizer(32, 12.2vw, 166) 0;
+    position: relative;
+    z-index: 15;
+
+    &.mobile {
+
+        a,
+        button {
+
+            &:focus-visible {
+                outline-color: #FFFFFF;
+            }
+        }
+        
+        .logo {
+
+            &__text,
+            &__circle {
+                fill: #FFFFFF;
+            }
+
+            &__path {
+                fill: rgba(37, 43, 70, .9);
+            }
+        }
+    }
+
+    &__bookmark {
+        display: inline-flex;
+    }
+}
+
+.logo {
+    @extend %z-relative;
+
+    &__text,
+    &__circle,
+    &__path {
+        transition: fill .5s ease .15s;
+    }
+}
+
+.navbar {
+    $root: &;
+
+    &.mobile {
+
+        #{$root}__trigger-open {
+            opacity: 0;
+        }
+
+        #{$root}__trigger-close{
+            opacity: 1;
+        }
+
+        #{$root}__links {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #{$root}__overlay {
+            visibility: visible;
+        }
+    }
+
+    &.transitioning {
+
+        #{$root}__trigger-open {
+            opacity: 1;
+        }
+
+        #{$root}__trigger-close{
+            opacity: 0;
+        }
+
+        #{$root}__links,
+        #{$root}__overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__trigger {
+        @extend %z-relative;
+    }
+
+    &__trigger-open {
+        transition: opacity .1s ease;
+    }
+
+    &__trigger-close {
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        transform: translateX(50%);
+        transition: opacity .1s ease;
+    }
+
+    &__links {
+        @extend %flex-column;
+        align-items: center;
+        left: 0;
+        opacity: 0;
+        padding: 0 2rem;
+        position: fixed;
+        right: 0;
+        top: func.convert(106);
+        transition: opacity 1.35s ease,
+                    visibility 1.35s ease;
+        visibility: hidden;
+        z-index: 10;
+    }
+
+    &__link {
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        text-align: center;
+        width: 100%;
+
+        &:nth-of-type(4){
+            padding: func.convert(18) 0;
+
+            a {
+                border-color: #FFFFFF;
+                padding: .5rem 0;
+            }
+        }
+
+        a {
+            color: #FFFFFF;
+            display: inline-block;
+            font-size: func.convert(20);
+            padding: func.convert(18) 0;
+            text-transform: uppercase;
+            width: 100%;
+        }
+    }
+
+    &__social {
+        margin-top: func.convert(202);
+    }
+
+    &__social-link {
+        display: inline-block;
+
+        &:last-of-type {
+            margin-left: func.convert(40);
+        }
+    }
+
+    &__overlay {
+        left: 0;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity 1.5s ease,
+                    visibility 1.5s ease;
+        visibility: hidden;
+
+        &.takeover {
+            background-color: rgba(37, 43, 70, .95);
+        }
+    }
+
+    &__ripple{
+        border-radius: 50%;
+        position: fixed;
+        transform: scale(0);
+        transition: transform 1.8s ease;
+    }
+
+    &__ripple {
+        
+        &--dark {
+            background-color: rgba(37, 43, 70, .95);
+        }
+
+        &--white {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        &.animate {
+            transform: scale(5);
+        }
+    }
+}
+
+@media (min-width: 50em) {
+
+    .header {
+        align-items: center;
+    }
+
+    .navbar {
+        $root: &;
+
+        &__trigger {
+            display: none;
+        }
+
+        &__links {
+            align-items: center;
+            flex-direction: row;
+            opacity: 1;
+            padding: 0;
+            position: static;
+            visibility: visible;
+        }
+
+        &__link {
+            border-top: none;
+            padding: 0;
+
+            a {
+                color: var.$vd-blue;
+                font-size: func.convert(13);
+                letter-spacing: 1px;
+                padding: 0;
+            }
+
+            &:nth-of-type(4) {
+                padding: 0;
+
+                a {
+                    background-color: var.$s-red ; 
+                    border-color: var.$s-red ;
+                    box-shadow: 0 6px .5rem 1px rgba(0, 0, 0, .1);
+                    color: #FFFFFF;
+                    padding: func.convert(11) func.convert(31) func.convert(10) !important;
+                
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: var.$s-red;
+                    }
+                }
+            }
+
+            &:not(:nth-of-type(4)) {
+                margin-right: func.resizer(24, 3.6vw, 48);
+            }
+        }
+    
+        &__social,
+        &__overlay {
+            display: none;
+        }
+    }
+}
